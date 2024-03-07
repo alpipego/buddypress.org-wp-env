@@ -1,0 +1,80 @@
+{
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org/",
+      "only": [
+        "wpackagist-plugin/*"
+      ]
+    },
+    {
+      "type": "package",
+      "package": [
+        {
+          "name": "wordpress-meta/bbpress-org",
+          "type": "wordpress-plugin",
+          "version": "1.0.5",
+          "source": {
+            "type": "svn",
+            "url": "https://meta.svn.wordpress.org/sites/trunk/buddypress.org/public_html/wp-content/plugins/",
+            "reference": "bbpress-org/"
+          }
+        },
+        {
+          "name": "wordpress-meta/buddypress-org",
+          "type": "wordpress-plugin",
+          "version": "1.0.5",
+          "source": {
+            "type": "svn",
+            "url": "https://meta.svn.wordpress.org/sites/trunk/buddypress.org/public_html/wp-content/plugins/",
+            "reference": "buddypress-org/"
+          }
+        },
+        {
+          "name": "wordpress-meta/buddypress-themes",
+          "type": "wordpress-theme",
+          "version": "dev-trunk",
+          "source": {
+            "type": "svn",
+            "url": "https://meta.svn.wordpress.org/sites/trunk/buddypress.org/public_html/wp-content/",
+            "reference": "themes/"
+          }
+        }
+      ]
+    }
+  ],
+  "require": {
+    "composer/installers": "^2.0",
+    "wordpress-meta/bbpress-org": "^1.0.5",
+    "wordpress-meta/buddypress-org": "^1.0.5",
+    "wordpress-meta/buddypress-themes": "dev-trunk@dev",
+    "wpackagist-plugin/akismet": "^5.3",
+    "wpackagist-plugin/bbpress-no-admin": "^1.2",
+    "wpackagist-plugin/debug-bar": "^1.1",
+    "wpackagist-plugin/email-post-changes": "^1.7",
+    "wpackagist-plugin/syntaxhighlighter": "^3.7",
+    "wpackagist-plugin/buddypress": "^12.3"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    },
+    "preferred-install": {
+      "wordpress-meta/*": "source"
+    }
+  },
+  "extra": {
+    "installer-paths": {
+      "wp-content/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "wp-content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "wp-content/themes": [
+        "type:wordpress-theme"
+      ]
+    },
+    "wordpress-content-dir": "wp-content"
+  }
+}
